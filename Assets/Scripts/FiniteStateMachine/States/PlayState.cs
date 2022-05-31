@@ -15,6 +15,7 @@ public class PlayState : BaseState
 
     public override void Enter()
     {
+        PlayerManager.Instance.PlaySkateAnimation();
         PlayerManager.Instance.ChangeSplineFollow(true);
     }
         
@@ -36,9 +37,5 @@ public class PlayState : BaseState
 
         PlayerManager.Instance.MoveCharacter();
 
-        if(Input.GetKey(KeyCode.J))
-        {
-            PlayerManager.Instance.ChangeFloorYScale(0.5f);
-        }
     }
 }

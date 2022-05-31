@@ -14,6 +14,7 @@ public class TapToPlayState : BaseState
 
     public override void Enter()
     {
+        PlayerManager.Instance.PlayIdleAnimation();
         PlayerManager.Instance.ChangeSplineFollow(false);
     }
         

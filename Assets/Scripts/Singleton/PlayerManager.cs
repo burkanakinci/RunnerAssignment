@@ -27,7 +27,7 @@ public class PlayerManager : MonoBehaviour
     private float changeOfMousePos, horizontalMovementChange;
     [SerializeField] private float horizontalSpeed = 8f, playerXClampValue = 4.5f;
 
-
+    [SerializeField] private Animator playerAnimator;
 
     private void Awake()
     {
@@ -79,5 +79,18 @@ public class PlayerManager : MonoBehaviour
     {
         floor.DOScaleY(floor.localScale.y+changeValue,1f);
         characterVisual.DOLocalMoveY(characterVisual.localPosition.y + changeValue,1f);
+    }
+
+    public void PlayIdleAnimation()
+    {
+        playerAnimator.Play("Idle", 0, 0.0f);
+    }
+    public void PlaySkateAnimation()
+    {
+        playerAnimator.SetBool("Skate",true);
+    }
+    public void ChangeAnimationIntegerValue(int _value)
+    {
+        playerAnimator.SetInteger("FailOrJump",_value);
     }
 }
