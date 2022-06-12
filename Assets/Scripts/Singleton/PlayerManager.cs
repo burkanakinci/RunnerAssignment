@@ -24,6 +24,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private Animator speedUpImageAnimator;
 
     [SerializeField] private Transform finishPoint;
+
+    [SerializeField] private Transform line;
     public int playerCoin
     {
         get
@@ -112,6 +114,8 @@ public class PlayerManager : MonoBehaviour
     public void PlayIdleAnimation()
     {
         playerAnimator.Play("Idle", 0, 0.0f);
+        playerAnimator.SetBool("Skate", false);
+        playerAnimator.SetInteger("FailOrJump", -1);
     }
     public void PlaySkateAnimation()
     {
@@ -175,5 +179,9 @@ public class PlayerManager : MonoBehaviour
     public void SetPlayerCoin()
     {
         playerCoin += ((int)(floor.localScale.y * 10));
+    }
+    public void ChangeLineActive(bool _isActive)
+    {
+        line.gameObject.SetActive(_isActive);
     }
 }

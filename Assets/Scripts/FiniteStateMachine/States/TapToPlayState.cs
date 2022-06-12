@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
 
 public class TapToPlayState : BaseState
 {
@@ -24,8 +26,9 @@ public class TapToPlayState : BaseState
         
     public override void UpdateLogic()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject())
         {
+            PlayerManager.Instance.ChangeLineActive(true);
             movementStateMachine.ChangeState(movementStateMachine.playState);
         }
     }
