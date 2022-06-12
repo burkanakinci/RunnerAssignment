@@ -16,6 +16,7 @@ public class FailState : BaseState
     {
         PlayerManager.Instance.ChangeSplineFollow(false);
         PlayerManager.Instance.ChangeAnimationIntegerValue(2);
+		PlayerManager.Instance.ChangeLineActive(false);
 
         base.Enter();
     }

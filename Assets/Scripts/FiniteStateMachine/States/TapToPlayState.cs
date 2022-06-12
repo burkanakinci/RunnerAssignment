@@ -28,7 +28,6 @@ public class TapToPlayState : BaseState
     {
         if (Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            PlayerManager.Instance.ChangeLineActive(true);
             movementStateMachine.ChangeState(movementStateMachine.playState);
         }
     }

@@ -16,6 +16,8 @@ public class FinishState : BaseState
     {
         
         PlayerManager.Instance.ChangeSplineFollow(false);
+		PlayerManager.Instance.ChangeLineActive(false);
+		
         PlayerManager.Instance.JumpFinishPlatform();
         PlayerManager.Instance.ChangeAnimationIntegerValue(1);
         GameManager.Instance.SetVCamOnFinish();

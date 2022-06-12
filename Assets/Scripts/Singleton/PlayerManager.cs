@@ -145,6 +145,7 @@ public class PlayerManager : MonoBehaviour
     private IEnumerator NormalSpeed()
     {
         yield return new WaitForSeconds(5f);
+        speedUpImageAnimator.Play("Empty");
         playerSplineFollower.followSpeed = speed;
         isSpeedNormal = true;
     }

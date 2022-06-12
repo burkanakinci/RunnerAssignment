@@ -15,8 +15,6 @@ public class BaseState
 
     public virtual void Enter()
     {
-
-        PlayerManager.Instance.ChangeLineActive(false);
         UIManager.Instance.ShowUI();
     }
     public virtual void UpdateLogic()
