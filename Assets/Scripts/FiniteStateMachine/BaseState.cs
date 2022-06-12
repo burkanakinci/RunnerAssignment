@@ -15,7 +15,8 @@ public class BaseState
 
     public virtual void Enter()
     {
-        return;
+
+        UIManager.Instance.ShowUI();
     }
     public virtual void UpdateLogic()
     {

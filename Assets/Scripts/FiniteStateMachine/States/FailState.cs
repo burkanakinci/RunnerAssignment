@@ -14,7 +14,9 @@ public class FailState : BaseState
 
     public override void Enter()
     {
+        PlayerManager.Instance.ChangeSplineFollow(false);
 
+        base.Enter();
     }
         
     public override void UpdateLogic()

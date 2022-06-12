@@ -17,6 +17,10 @@ public class PlayState : BaseState
     {
         PlayerManager.Instance.PlaySkateAnimation();
         PlayerManager.Instance.ChangeSplineFollow(true);
+
+        UIManager.Instance.ShowLevel();
+
+        base.Enter();
     }
         
     public override void UpdateLogic()

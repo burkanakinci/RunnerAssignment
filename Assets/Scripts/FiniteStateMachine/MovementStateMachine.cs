@@ -16,5 +16,17 @@ public class MovementStateMachine : StateMachine
         playState = new PlayState(this);
         failState = new FailState(this);
         finishState = new FinishState(this);
+
+        GameManager.Instance.levelStart += ChangeInitialState;
+    }
+
+    public void ChangeInitialState()
+    {
+        ChangeState(GetInitialState());
+    }
+
+    protected override BaseState GetInitialState()
+    {
+        return tapToPlayState;
     }
 }

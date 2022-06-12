@@ -14,7 +14,15 @@ public class FinishState : BaseState
 
     public override void Enter()
     {
+        
+        PlayerManager.Instance.ChangeSplineFollow(false);
+        PlayerManager.Instance.JumpFinishPlatform();
+        PlayerManager.Instance.ChangeAnimationIntegerValue(1);
+        GameManager.Instance.SetVCamOnFinish();
 
+        PlayerManager.Instance.SetPlayerCoin();
+        UIManager.Instance.ShowPlayerCoin();
+        base.Enter();
     }
         
     public override void UpdateLogic()
