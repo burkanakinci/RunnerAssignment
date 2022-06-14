@@ -18,6 +18,7 @@ public class TapToPlayState : BaseState
     {
         PlayerManager.Instance.ChangeSplineFollow(false);
         PlayerManager.Instance.PlayIdleAnimation();
+        PlayerManager.Instance.NormalSpeed();
 
         GameManager.Instance.SetVCamOnPlay();
 
@@ -26,7 +27,7 @@ public class TapToPlayState : BaseState
         
     public override void UpdateLogic()
     {
-        if (Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject())
+        if (Input.GetMouseButtonUp(0))
         {
             movementStateMachine.ChangeState(movementStateMachine.playState);
         }

@@ -76,11 +76,10 @@ public class UIManager : MonoBehaviour
 
     public void ShowPlayerCoin()
     {
+       
+
         DOTween.To(() => tempPlayerCoin, x => tempPlayerCoin = x, PlayerManager.Instance.playerCoin, 1f)
             .OnUpdate(() => playerCoinText.text = tempPlayerCoin.ToString());
-
-
-
     }
 
 }

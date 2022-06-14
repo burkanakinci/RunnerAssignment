@@ -142,7 +142,7 @@ public class PlayerManager : MonoBehaviour
         }
         
     }
-    private IEnumerator NormalSpeed()
+    public IEnumerator NormalSpeed()
     {
         yield return new WaitForSeconds(5f);
         speedUpImageAnimator.Play("Empty");
