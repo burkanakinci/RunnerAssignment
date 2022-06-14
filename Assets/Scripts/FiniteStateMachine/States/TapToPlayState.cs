@@ -27,7 +27,7 @@ public class TapToPlayState : BaseState
         
     public override void UpdateLogic()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0)&& !EventSystem.current.IsPointerOverGameObject())
         {
             movementStateMachine.ChangeState(movementStateMachine.playState);
         }
